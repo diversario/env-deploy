@@ -786,15 +786,15 @@ function installNode(){
 
     if( (tag[2] % 2) == 0 ){
 
-      if( tag[1] > current[1] ){
+      if( tag[1] > current[1] ) {
         max=$1
       };
 
-      if( tag[2] > current[2] ){
+      if( tag[2] > current[2] && tag[1] >= current[1]) {
         max=$1
       };
 
-      if( (tag[3] > current[3])) {
+      if( tag[3] > current[3] && tag[2] >= current[2] && tag[1] >= current[1]) {
         max=$1
       };
 
@@ -1090,18 +1090,17 @@ function installRedis(){
 
     if( (tag[2] % 2) == 0 ){
 
-      if( tag[1] > current[1] ){
+      if( tag[1] > current[1] ) {
         max=$1
       };
 
-      if( tag[2] > current[2] ){
+      if( tag[2] > current[2] && tag[1] >= current[1]) {
         max=$1
       };
 
-      if( (tag[3] > current[3])) {
+      if( tag[3] > current[3] && tag[2] >= current[2] && tag[1] >= current[1]) {
         max=$1
       };
-
     };
   }
   END {print max}
